@@ -1,12 +1,11 @@
+import axios from "axios"
 const Produtos = () => {
-    // Objeto com a lista de pizzas
-    const pizzas = [
-        'Pizza de muçarela',
-        'pizza de Calabresa',
-        'Pizza Baiana',
-        'Pizza Quatro Queijos'
+    // Consumode um endpoint com as pizzas
+    axios.get("http://172.19.0.49/pizzariateste/api/v1/produto")
+    .then(response=>{
+        console.log(response.data)
+    })
 
-    ]
     // Interação da lista de pizzas
     const listaPizzas = pizzas.map(pizza=><li>{pizza}</li>)
 
